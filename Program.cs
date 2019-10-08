@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -39,7 +40,21 @@ namespace ca.speedy.my
                 var mySpeedyClient = new MySpeedyMySpeedyClient(MySpeedyAPIURL, httpClient);
 
                 var trackShipmentData = await mySpeedyClient.GetTrackShipmentAsync(ExamplePRONumber);
+                var invoicePDFBytes = await mySpeedyClient.GetInvoicePDFAsync(ExamplePRONumber);
+                using (var fs = new FileStream(@".\myspeedy_client_test_invoice.pdf", FileMode.OpenOrCreate))
+                {
+                    fs.Seek(0, SeekOrigin.Begin);
+                    fs.Write(invoicePDFBytes, 0, invoicePDFBytes.Length);
+                    fs.Flush();
+                }
                 var proofOfDeliveryPDFBytes = await mySpeedyClient.GetProofOfDeliveryPDFAsync(ExamplePRONumber);
+                using (var fs = new FileStream(@".\myspeedy_client_test_pod.pdf", FileMode.OpenOrCreate))
+                {
+                    fs.Seek(0, SeekOrigin.Begin);
+                    fs.Write(proofOfDeliveryPDFBytes, 0, proofOfDeliveryPDFBytes.Length);
+                    fs.Flush();
+                }
+
                 var invoiceData = await mySpeedyClient.GetInvoiceDataAsync(ExamplePRONumber);
             });
 

@@ -714,7 +714,7 @@ namespace ca.speedy.my
     
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/invoice/{invoicenumber}");
-            urlBuilder_.Replace("{invoiceNumber}", System.Uri.EscapeDataString(ConvertToString(invoiceNumber, System.Globalization.CultureInfo.InvariantCulture)));
+            urlBuilder_.Replace("{invoicenumber}", System.Uri.EscapeDataString(ConvertToString(invoiceNumber, System.Globalization.CultureInfo.InvariantCulture)));
     
             var client_ = _httpClient;
             try
@@ -785,7 +785,7 @@ namespace ca.speedy.my
     
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/invoicedata/{invoicenumber}");
-            urlBuilder_.Replace("{invoiceNumber}", System.Uri.EscapeDataString(ConvertToString(invoiceNumber, System.Globalization.CultureInfo.InvariantCulture)));
+            urlBuilder_.Replace("{invoicenumber}", System.Uri.EscapeDataString(ConvertToString(invoiceNumber, System.Globalization.CultureInfo.InvariantCulture)));
     
             var client_ = _httpClient;
             try
