@@ -3,7 +3,7 @@
 <br />
 First, register @ <a href="https://www.myspeedy.ca">https://www.myspeedy.ca</a> and follow the instructions thru validating your email address, and attaching your MySpeedy.ca login to your Speedy Transportation account.<br />
 <br />
-Once you have completed settings up your account and have signed in, your refresh token will be available at <a href="https://www.myspeedy.ca/settings/api">https://www.myspeedy.ca/settings/api</a>.  Copy the refresh token into Program.cs (approx line 23) replacing the placeholder text. i.e.<br />
+Once you have completed setting up your account and have signed in, your refresh token will be available at <a href="https://www.myspeedy.ca/settings/api">https://www.myspeedy.ca/settings/api</a>.  Copy the refresh token into Program.cs (approx line 23) replacing the placeholder text. i.e.<br />
 <br />
 <b>private static string RefreshToken = "*your refresh token goes here*"</b><br />
 will become...<br />
